@@ -1,0 +1,16 @@
+{
+  "name": "deteksi-sampah-ann",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Deteksi sampah berbasis Jaringan Saraf Tiruan dengan Streamlit",
+  "scripts": {
+    "start": "py -3.11 -m streamlit run apk_sampah_suara.py",
+    "dev": "py -3.11 -m streamlit run apk_sampah_suara.py",
+    "setup": "py -3.11 -m pip install -r requirements.txt",
+    "setup:train": "py -3.11 -m pip install -r requirements-train.txt",
+    "train": "py -3.11 train_ann.py",
+    "test": "py -3.11 -m pytest -q tests",
+    "setup:test": "py -3.11 -m pip install -r requirements-dev.txt",
+    "stop": "call \"Hentikan Aplikasi.bat\""
+  }
+}

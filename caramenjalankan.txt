@@ -1,0 +1,40 @@
+CARA MENJALANKAN LEWAT NPM:
+1. Buka terminal di folder ini
+2. Ketik: npm start
+   (alias sama: npm run dev)
+   Catatan: "npm run" tanpa nama script hanya menampilkan daftar script.
+
+Jika library belum terpasang, ketik dulu: npm run setup
+
+PENGATURAN API KEY:
+- API key Roboflow disimpan di .streamlit/secrets.toml
+- Jika file belum ada: salin .streamlit/secrets.toml.example, lalu isi api_key
+- Jangan bagikan file .streamlit/secrets.toml
+
+Browser akan terbuka otomatis di http://localhost:8501
+Pilih Sumber Gambar: Kamera Lokal / Kamera Browser / Upload Gambar
+Pilih Model: Roboflow (cloud) / Lokal (ANN .keras, perlu training)
+Klik "Jalankan Pemindaian" untuk klasifikasi
+Aktifkan Suara: pilih mesin Browser atau Server, atur kecepatannya
+Buka "Riwayat Klasifikasi & Statistik" untuk melihat riwayat dan unduh CSV
+
+CARA MENGHENTIKAN:
+- Ketik: npm run stop
+- atau klik tombol "Matikan Kamera" di aplikasi (kamera mati, server tetap hidup)
+
+TANPA TERMINAL (opsional):
+- Double-click "Jalankan Aplikasi.vbs" untuk menyalakan
+- Double-click "Hentikan Aplikasi.bat" untuk mematikan
+
+CARA MANUAL (alternatif):
+python -m streamlit run apk_sampah_suara.py
+
+TRAINING MODEL ANN (opsional):
+- npm run setup:train  (install TensorFlow, cukup sekali)
+- npm run train        (latih model; hasil di folder model/)
+- Model hasil training belum dipakai oleh aplikasi web (aplikasi web memakai Roboflow API)
+
+TES OTOMATIS:
+- npm run setup:test  (install pytest, cukup sekali)
+- npm test            (menjalankan tes)
+- Detail lengkap ada di README.md
